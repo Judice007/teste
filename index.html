@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NovaStreamer — Ao Vivo na Twitch</title>
+<meta name="description" content="Página oficial da NovaStreamer. Assista às lives, veja a agenda, siga nas redes e apoie o canal." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="navbar" id="navbar">
+  <div class="container navbar-inner">
+    <a href="#top" class="logo">Nova<span>Streamer</span></a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#live">Ao Vivo</a>
+      <a href="#schedule">Agenda</a>
+      <a href="#about">Sobre</a>
+      <a href="#clips">Clipes</a>
+      <a href="#support">Apoiar</a>
+    </nav>
+
+    <div class="navbar-actions">
+      <a href="https://twitch.tv/novastreamer" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Seguir na Twitch</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div class="status-badge" id="statusBadge">
+        <span class="dot"></span>
+        <span id="statusText">Verificando status...</span>
+      </div>
+
+      <h1>E aí, valeu por passar! Eu sou a <span class="gradient-text">Nova</span>.</h1>
+      <p class="hero-subtitle">
+        Jogos, conversa e muita zoeira toda semana. Entra na live, cola no chat
+        e vem fazer parte da comunidade.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#live" class="btn btn-primary">Assistir agora</a>
+        <a href="#schedule" class="btn btn-outline">Ver agenda</a>
+      </div>
+
+      <div class="hero-stats" id="heroStats">
+        <div class="stat">
+          <span class="stat-number" data-target="128000">0</span>
+          <span class="stat-label">Seguidores</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-target="3200">0</span>
+          <span class="stat-label">Inscritos</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-target="940">0</span>
+          <span class="stat-label">Horas ao vivo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="live" class="section">
+    <div class="container">
+      <h2 class="section-title">Transmissão ao vivo</h2>
+      <p class="section-subtitle">Se estiver online, o player aparece aqui embaixo. Se não, dá uma olhada na agenda.</p>
+
+      <div class="live-wrapper">
+        <div class="live-player">
+          <iframe
+            id="twitchEmbed"
+            src="https://player.twitch.tv/?channel=novastreamer&parent=localhost&muted=true"
+            allowfullscreen
+            title="Player da Twitch">
+          </iframe>
+        </div>
+        <div class="live-chat">
+          <iframe
+            id="twitchChat"
+            src="https://www.twitch.tv/embed/novastreamer/chat?parent=localhost&darkpopout"
+            title="Chat da Twitch">
+          </iframe>
+        </div>
+      </div>
+      <p class="live-note">Troque <code>novastreamer</code> e <code>parent=localhost</code> pelo seu canal e domínio real antes de publicar.</p>
+    </div>
+  </section>
+
+  <section id="schedule" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Agenda da semana</h2>
+      <p class="section-subtitle">Horário de Brasília. Avisos de mudança sempre saem no Discord.</p>
+
+      <div class="schedule-grid">
+        <div class="schedule-card">
+          <span class="day">Seg</span>
+          <span class="time">Folga</span>
+        </div>
+        <div class="schedule-card active">
+          <span class="day">Ter</span>
+          <span class="time">20h</span>
+          <span class="game">Valorant</span>
+        </div>
+        <div class="schedule-card active">
+          <span class="day">Qua</span>
+          <span class="time">20h</span>
+          <span class="game">Just Chatting</span>
+        </div>
+        <div class="schedule-card active">
+          <span class="day">Qui</span>
+          <span class="time">20h</span>
+          <span class="game">Variedades</span>
+        </div>
+        <div class="schedule-card active">
+          <span class="day">Sex</span>
+          <span class="time">21h</span>
+          <span class="game">Live especial</span>
+        </div>
+        <div class="schedule-card active">
+          <span class="day">Sáb</span>
+          <span class="time">16h</span>
+          <span class="game">Comunidade</span>
+        </div>
+        <div class="schedule-card">
+          <span class="day">Dom</span>
+          <span class="time">Folga</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container about-grid">
+      <div class="about-text">
+        <h2 class="section-title left">Sobre mim</h2>
+        <p>
+          Streamer há 4 anos, apaixonada por jogos competitivos e por criar um
+          espaço onde todo mundo se sente bem-vindo. Comecei jogando pra um
+          punhado de amigos e hoje transmito pra uma galera incrível todos os
+          dias da semana.
+        </p>
+        <p>
+          Fora da live você me encontra editando clipes, testando jogos novos
+          antes de todo mundo e respondendo (quase) todo mundo no Discord.
+        </p>
+        <a href="#support" class="btn btn-primary">Apoie o canal</a>
+      </div>
+      <div class="about-media" aria-hidden="true">
+        <div class="about-glow"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="clips" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Melhores momentos</h2>
+      <p class="section-subtitle">Uma prévia dos clipes mais assistidos. Link pra playlist completa no botão abaixo.</p>
+
+      <div class="clips-grid">
+        <a class="clip-card" href="https://twitch.tv/novastreamer/clips" target="_blank" rel="noopener">
+          <div class="clip-thumb">▶</div>
+          <span>Clutch impossível 1v5</span>
+        </a>
+        <a class="clip-card" href="https://twitch.tv/novastreamer/clips" target="_blank" rel="noopener">
+          <div class="clip-thumb">▶</div>
+          <span>Chat quebrou a live</span>
+        </a>
+        <a class="clip-card" href="https://twitch.tv/novastreamer/clips" target="_blank" rel="noopener">
+          <div class="clip-thumb">▶</div>
+          <span>Jogo novo, susto novo</span>
+        </a>
+        <a class="clip-card" href="https://twitch.tv/novastreamer/clips" target="_blank" rel="noopener">
+          <div class="clip-thumb">▶</div>
+          <span>Colab surpresa</span>
+        </a>
+      </div>
+
+      <div class="clips-cta">
+        <a href="https://twitch.tv/novastreamer/clips" target="_blank" rel="noopener" class="btn btn-outline">Ver todos os clipes</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section socials">
+    <div class="container">
+      <h2 class="section-title">Vem pra comunidade</h2>
+      <div class="social-grid">
+        <a class="social-card" href="https://twitch.tv/novastreamer" target="_blank" rel="noopener">
+          <span class="social-icon">🟣</span> Twitch
+        </a>
+        <a class="social-card" href="https://youtube.com/@novastreamer" target="_blank" rel="noopener">
+          <span class="social-icon">🔴</span> YouTube
+        </a>
+        <a class="social-card" href="https://instagram.com/novastreamer" target="_blank" rel="noopener">
+          <span class="social-icon">🩷</span> Instagram
+        </a>
+        <a class="social-card" href="https://tiktok.com/@novastreamer" target="_blank" rel="noopener">
+          <span class="social-icon">⚫</span> TikTok
+        </a>
+        <a class="social-card" href="https://discord.gg/novastreamer" target="_blank" rel="noopener">
+          <span class="social-icon">🔵</span> Discord
+        </a>
+        <a class="social-card" href="https://x.com/novastreamer" target="_blank" rel="noopener">
+          <span class="social-icon">⚪</span> X / Twitter
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="support" class="section section-alt support">
+    <div class="container support-inner">
+      <h2 class="section-title">Apoie o canal</h2>
+      <p class="section-subtitle">
+        Cada assinatura, doação ou compartilhamento ajuda o canal a crescer e
+        me deixa mais perto de viver disso em tempo integral. Valeu demais!
+      </p>
+      <div class="support-actions">
+        <a href="https://twitch.tv/subs/novastreamer" target="_blank" rel="noopener" class="btn btn-primary">Assinar na Twitch</a>
+        <a href="#" target="_blank" rel="noopener" class="btn btn-outline">Doar via Pix / Streamlabs</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="#top" class="logo">Nova<span>Streamer</span></a>
+    <p>&copy; <span id="year"></span> NovaStreamer. Todos os direitos reservados.</p>
+    <div class="footer-links">
+      <a href="#live">Ao Vivo</a>
+      <a href="#schedule">Agenda</a>
+      <a href="#support">Apoiar</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
